@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanye Quotes</title>
+    <!-- poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: poppins;
+            font-size: 2rem;
+            text-align: center;
+            background-color: rgb(252, 222, 183);
+        }
+        .quote-container{
+            padding-left: 5rem;
+            padding-right: 5rem;
+            margin-top: 10%;
+            z-index: 30;
+        }
+        .quote{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 15rem;
+            width: full;
+        }
+        .btn-generate{
+            font-family: poppins;
+            font-size: 1.5rem;
+            background-color: black;
+            color: white;
+            padding: 0.5rem;
+            border: 0px;
+        }
+        .blur-circle1{
+            position: absolute;
+            width: 40%;
+            aspect-ratio: 1/1;
+            background-color: rgb(59, 59, 255);
+            top: 10%;
+            left: 0px;
+            border-radius: 200rem;
+            filter: blur(15rem);
+            z-index: -1;
+        }
+        .blur-circle2{
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background-color: rgb(255, 81, 81);
+            top: 50%;
+            right: 0px;
+            border-radius: 200rem;
+            filter: blur(10rem);
+            z-index: -1;
+        }
+        
+    </style>
+    <script>
+        function loadQuote(){
+            fetch('https://api.kanye.rest/')
+            .then(res => res.json())
+            .then(data => displayQuote(data));
+        }
+
+        function displayQuote(data){
+            //data = "asdasda sdasdasd asdasdasda sdasdasd asdasdasd asdasd asdasdasda sdasdas dasda sdasdasd asdasd asdad asdasda sdasdas dasasdas dasd asdasdasdasdasdasdaa sdasdasdas dasdasdasdasda sdasdasd asdasdasd asdasdas dasdasdasdasd asdasdasdasd sdasdasdasda dasdasdasdas dasdasasd asdasda sdasdasd asdas dasda"
+            console.log(data);
+            document.getElementById('quote').innerHTML = data.quote;
+            //document.getElementById('quote').innerHTML = data;
+        }
+    </script>
+</head>
+<body>
+    <div class="blur-circle1"></div>
+    <div class="blur-circle2"></div>
+    <div class="blur-circle3"></div>
+    <div class="quote-container">
+        <div class="quote" id="quote"></div>
+        <button class="btn-generate" onclick="loadQuote()">Click to generate</button>
+    </div>
+</body>
+</html>

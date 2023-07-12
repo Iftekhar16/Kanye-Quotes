@@ -1,1 +1,1 @@
-"# Kanye-Quotes" 
+Just Kanye things ✨✨✨
