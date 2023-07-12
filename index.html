@@ -33,9 +33,14 @@
             font-size: 1.5rem;
             background-color: black;
             color: white;
-            padding: 0.5rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
             border: 0px;
+            cursor: pointer;
         }
+        /*BG Blur*/
         .blur-circle1{
             position: absolute;
             width: 40%;
@@ -68,10 +73,8 @@
         }
 
         function displayQuote(data){
-            //data = "asdasda sdasdasd asdasdasda sdasdasd asdasdasd asdasd asdasdasda sdasdas dasda sdasdasd asdasd asdad asdasda sdasdas dasasdas dasd asdasdasdasdasdasdaa sdasdasdas dasdasdasdasda sdasdasd asdasdasd asdasdas dasdasdasdasd asdasdasdasd sdasdasdasda dasdasdasdas dasdasasd asdasda sdasdasd asdas dasda"
             console.log(data);
             document.getElementById('quote').innerHTML = data.quote;
-            //document.getElementById('quote').innerHTML = data;
         }
     </script>
 </head>
